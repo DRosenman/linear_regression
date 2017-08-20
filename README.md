@@ -243,7 +243,8 @@ print(data.r00)
     0.991268534449
  
 <a id='equations'></a> 
-## Linear Regression Mathematical Equations 
+
+## Linear Regression Mathematical Equations <a id='equations'></a>
 
 If you have taken $\mathrm{n}$ pairs of measurements $(x_1,y_1),(x_2,y_2),...,(x_n,y_n)$, the mean value of $\mathrm{x}$ is by definition:
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i}$$
@@ -276,6 +277,8 @@ $$m = \frac{\sum_{i=1}^n{x_iy_i}}{\sum_{i=1}^n{x_i^2}}$$
 
 and the standard error of the slope, $\Delta m$ is
 $$\Delta m = \sqrt{\frac{1}{\sum_{i=1}^n{x_i^2}}\frac{(y_i - mx_i)^2}{n-1}}$$
+
+
 
 ## Plans for Version 0.2 <a name='v.2'></a>
 - Add module for creating various regression plots.
