@@ -17,6 +17,8 @@ From the command line:
 pip install linear_regression
 ```
 
+Also available at <a href="https://pypi.python.org/pypi?:action=pkg_edit&name=linear-regression">https://pypi.python.org/pypi?:action=pkg_edit&name=linear-regression</a>
+
 ## <a name="purpose"></a> Purpose of Package 
 The purpose of this package is to make it simple to perform simple least squares regression analysis on two sets of measurements. The scipy.stats module contains a function 'linregress' that can quickly perform regression analysis on two sets of measurements, but it does not have the option to force the best fit line to intercept the origin (i.e. to have a y intercept of 0). It also lacks other options, as demonstrated in the comparison below.
 
