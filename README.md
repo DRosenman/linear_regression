@@ -44,7 +44,7 @@ The purpose of this package is to make it simple to perform simple least squares
 
 ## Using  The Package <a name="using"></a> 
 
-Version 0.1 of this package only contains a single module, <a href ="http://github.com/drosenman/linear_regression/v0.1/lr.py">lr.py</a>,  which contains a simple class named lr.
+Version 0.1 of this package only contains a single module, <a href ="https://github.com/DRosenman/linear_regression/blob/master/v0.1/lr.py">lr.py</a>,  which contains a simple class named lr.
 
 ### **Load The lr class**
 
