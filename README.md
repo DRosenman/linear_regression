@@ -53,7 +53,7 @@ Version 0.1 of this package only contains a single module, <a href ="http://gith
 from linear_regression.lr import lr
 ```
 
-### **Store the x and y coordinates from you dataset into seperate array-like object (arrays, np arrays, lists, tuples...)**
+### Store the x and y coordinates from you dataset into seperate array-like object (arrays, np arrays, lists, tuples...)
 
 Example: My dataset contains the following (x,y) data points:
 
@@ -67,9 +67,10 @@ x = [1.0,1.8,4.5,4.7,5.0]
 y = [2.2,3.8,6.4,7.2,9.3]
 ```
 
-### **Create an instance object of the lr class using the x and y variables are instance arguments**. 
+### Create an instance object of the lr class using the x and y variables are instance arguments. 
 
 I'll name my object data. I will use this object throughout the tutorial.
+
 
 
 ```python
@@ -94,162 +95,39 @@ data = lr(x,y)
 ```python
 regression_results = data.results() #No parameters specified, so by default returns 
                                     #DataFrame with values for the regular best fit line 
-regression_results 
-#if you are using a python script and not jupyter notebook, to print the dataframe, using print(data.results())
+print(regression_results)
 ```
 
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Slope</th>
-      <th>Intercept</th>
-      <th>Std. Error, Slope</th>
-      <th>Std. Error, Intercept</th>
-      <th>r</th>
-      <th>r-squared</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>BFL</th>
-      <td>1.445573</td>
-      <td>0.865051</td>
-      <td>0.257081</td>
-      <td>0.972703</td>
-      <td>0.955689</td>
-      <td>0.913341</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+            Slope  Intercept  Std. Error, Slope  Std. Error, Intercept         r  \
+    BFL  1.445573   0.865051           0.257081               0.972703  0.955689   
+    
+         r-squared  
+    BFL   0.913341  
+    
 
 
 ```python
-data.results(zero_intercept = True) #Retuns DataFrame with results for the best fit line through the origin
+print(data.results(zero_intercept = True)) #Retuns DataFrame with results for the best fit line through the origin
 ```
 
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Slope</th>
-      <th>Intercept</th>
-      <th>Std. Error, Slope</th>
-      <th>r</th>
-      <th>r-squared</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>BFL Through (0,0)</th>
-      <td>1.65102</td>
-      <td>0.0</td>
-      <td>0.109809</td>
-      <td>0.991269</td>
-      <td>0.982613</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+                         Slope  Intercept  Std. Error, Slope         r  r-squared
+    BFL Through (0,0)  1.65102        0.0           0.109809  0.991269   0.982613
+    
 
 
 ```python
-data.results(both = True) #Returns DataFrame with values for both the regular best 
+print(data.results(both = True)) #Returns DataFrame with values for both the regular best 
                           # fit line and the best fit line through the origin
 ```
 
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Slope</th>
-      <th>Intercept</th>
-      <th>Std. Error, Slope</th>
-      <th>Std. Error, Intercept</th>
-      <th>r</th>
-      <th>r-squared</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>BFL</th>
-      <td>1.445573</td>
-      <td>0.865051</td>
-      <td>0.257081</td>
-      <td>0.972703</td>
-      <td>0.955689</td>
-      <td>0.913341</td>
-    </tr>
-    <tr>
-      <th>BFL Through (0,0)</th>
-      <td>1.651020</td>
-      <td>0.000000</td>
-      <td>0.109809</td>
-      <td>NaN</td>
-      <td>0.991269</td>
-      <td>0.982613</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+                          Slope  Intercept  Std. Error, Slope  \
+    BFL                1.445573   0.865051           0.257081   
+    BFL Through (0,0)  1.651020   0.000000           0.109809   
+    
+                       Std. Error, Intercept         r  r-squared  
+    BFL                             0.972703  0.955689   0.913341  
+    BFL Through (0,0)                    NaN  0.991269   0.982613  
+    
 
 **Printing the object**
 
