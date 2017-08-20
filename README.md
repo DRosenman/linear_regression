@@ -260,7 +260,7 @@ $$
 
 
 The $\mathrm{y}$-intercept, $\mathrm{c}$, is given by:
-$$c = \bar{y} - m\bar{x}$$
+$$c = \\bar{y} - m\\bar{x}$$
 
 
 The standard error in the slope, $\Delta m$, is:
