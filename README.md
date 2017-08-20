@@ -245,38 +245,7 @@ print(data.r00)
 <a id='equations'></a> 
 
 ## Linear Regression Mathematical Equations <a id='equations'></a>
-
-If you have taken $\mathrm{n}$ pairs of measurements $(x_1,y_1),(x_2,y_2),...,(x_n,y_n)$, the mean value of $\mathrm{x}$ is by definition:
-$$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i}$$
-
-and the mean value of $\mathrm{y}$ is 
-$$\bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i}$$
-
-
-The slope of the best fit line, $\mathrm{m}$ is given by:
-
-$$m = \frac{\sum_{i=1}^n{(x_i - \bar{x})y_i}}{\sum_{i=1}^n{(x_i - \bar{x})^2}}
-$$
-
-
-The $\mathrm{y}$-intercept, $\mathrm{c}$, is given by:
-$$c = \\bar{y} - m\\bar{x}$$
-
-
-The standard error in the slope, $\Delta m$, is:
-$$\Delta m = \sqrt{\frac{1}{\sum_{i=1}^n{(x_i - \bar{x})^2}}\frac{\sum_{i=1}^n{(y_i - mx_i - c )^2}}{n-2}}$$
-
-
-The standard error in the y intercept, $\Delta c$ is:
-$$\Delta c = \sqrt{\left(\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n{(x_i-\bar{x})^2}}\right)\frac{\sum_{i=1}^n{(y_i - mx_i - c )^2}}{n-2}}$$
-
-
-**If the best fit is required to pass through the origin**, $(0,0)$, then $c = 0$, and 
-$$m = \frac{\sum_{i=1}^n{x_iy_i}}{\sum_{i=1}^n{x_i^2}}$$
-
-
-and the standard error of the slope, $\Delta m$ is
-$$\Delta m = \sqrt{\frac{1}{\sum_{i=1}^n{x_i^2}}\frac{(y_i - mx_i)^2}{n-1}}$$
+The least squares regression mathematical equations that I used can be found at <a href = "https://github.com/DRosenman/linear_regression/blob/master/leastsquaresmath.pdf">https://github.com/DRosenman/linear_regression/blob/master/leastsquaresmath.pdf</a>
 
 
 
