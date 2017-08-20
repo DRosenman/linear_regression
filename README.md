@@ -74,7 +74,7 @@ I'll name my object data. I will use this object throughout the tutorial.
 data = lr(x,y)
 ```
 
-### ** lr Object Methods** 
+### lr Object Methods 
 **results** 
 
 *parameters*: 
