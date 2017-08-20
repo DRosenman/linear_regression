@@ -1,5 +1,5 @@
 
-# linear_regression Version 0.1 Tutorial
+# linear_regression Version 0.1
 - <a href = "#installing">Installing The Package</a>
 - <a href = "#purpose">Purpose of Package</a>
 - <a href="#comparison">Comparison with scipy.stats.linregress</a> 
