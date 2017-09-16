@@ -2,9 +2,13 @@
 \usepackage{amsmath}
 \title{Least Squares Linear Regression Equations}
 \author{Dave Rosenman}
+
 \begin{document}
 	\maketitle
-\section*{Best Fit Line}	
+	\tableofcontents
+	\newpage
+\section{Least Squares Regression Equations}
+\subsection{Best Fit Line}	
 If you have taken $\mathrm{n}$ pairs of measurements $(x_1,y_1),(x_2,y_2),...,(x_n,y_n)$, the mean value of $\mathrm{x}$ is by definition:
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i}$$
 
@@ -15,7 +19,7 @@ $$\bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i}$$
 The slope of the best fit line, $\mathrm{m}$ is given by:
 
 $$m = \frac{\sum_{i=1}^n{(x_i - \bar{x})y_i}}{\sum_{i=1}^n{(x_i - \bar{x})^2}}
-$$
+$$fra
 
 
 The $\mathrm{y}$-intercept, $\mathrm{c}$, is given by:
@@ -32,7 +36,7 @@ $$\Delta c = \sqrt{\left(\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^n{(x_i-\bar{x
 The coefficient of determination, $r^2$ is:
 $${r^2} = 1 - \frac{{\sum\limits_{i = 1}^n {{{\left( {{y_i} - m{x_i} - c} \right)}^2}} }}{{\sum\limits_{i = 1}^n {{{\left( {{y_i} - \bar y} \right)}^2}} }}$$
 
-\section*{Best Fit Line Through the Origin, (0,0)}
+\subsection{Best Fit Line Through the Origin, (0,0)}
 If the best fit is required to pass through the origin, $(0,0)$, then $c = 0$, and 
 $$m = \frac{\sum_{i=1}^n{x_iy_i}}{\sum_{i=1}^n{x_i^2}}$$
 
@@ -42,4 +46,87 @@ $$\Delta m = \sqrt{\frac{1}{\sum_{i=1}^n{x_i^2}}\frac{\sum_{i=1}^n(y_i - mx_i)^2
 
 The coefficient of determination, $r^2$, is:
 $${r^2} = 1 - \frac{{\sum\limits_{i = 1}^n {{{\left( {{y_i} - m{x_i}} \right)}^2}} }}{{\sum\limits_{i = 1}^n {{y_i^2}} }}$$
+
+\section{Derivations of $m$ and $c$}
+\subsection{Best Fit Line}
+For the least squares method, if we have a set of $\mathrm{n}$ measurements $(x_1,y_1),(x_2,y_2),...,(x_n,y_n)$, we are looking for the line $y = mx + c$ that minimizes the equation
+$$S = \sum\limits_{i = 1}^n {{{\left( {{y_i} - m{x_i} - c} \right)}^2}}$$
+(i.e. the line that minimizes the sum of the squared deviations of our y values from the values determined by $y=mx+c$).
+
+So we are looking for the coefficients $m$ and $c$ that minimize the equations above. Thinking of $S$ as $S(m,c)$, $S$, if S is at a minimum point:
+\begin{itemize}
+	\item $\frac{\partial S}{\partial m} = 0$
+	\item $\frac{\partial S}{\partial c} = 0$
+
+\end{itemize}
+
+
+
+$$\frac{{\partial S}}{{\partial m}} =  - 2\sum\limits_{i = 1}^n {{x_i}\left( {{y_i} - m{x_i} - c} \right)}  = 0$$
+\begin{equation}
+\sum\limits_{i = 1}^n {{x_i}{y_i} = m\sum\limits_{i = 1}^n {x_i^2}  + c\sum\limits_{i = 1}^n {{x_i}} } 
+\end{equation}
+
+$$\frac{{\partial S}}{{\partial c}} =  - 2\sum\limits_{i = 1}^n {\left( {{y_i} - m{x_i} - c} \right)}  = 0$$
+\begin{equation}
+\sum\limits_{i = 1}^n {{y_i}}  = m\sum\limits_{i = 1}^n {{x_i}}  + cn
+\end{equation}
+
+Note: Equation (2) shows that the best fit line goes through the point $(\hat{x},\hat{y})$, with $\hat{x}$ being the average value of your measured $x$ coordinates
+and $\hat{y}$ being the average value of your measured $y$ coordinates. From equation (2),
+$$\underbrace {\frac{1}{n}\sum\limits_{i = 1}^n {{y_i}} }_{\bar y} = \underbrace {m\frac{1}{n}\sum\limits_{i = 1}^n {{x_i}} }_{m\bar x} + c$$
+
+Back to deriving the values for $m$ and $c$... To find $c$ in terms of $m$, divide equation (2) by $n$ and simplify:
+$$\underbrace {\frac{1}{n}\sum\limits_{i = 1}^n {{y_i}} }_{\bar y} + c = m\underbrace {\frac{1}{n}\sum\limits_{i = 1}^n {{x_i}} }_{\bar x}$$
+$$\bar y = m\bar x + c $$
+\begin{equation}
+c = \bar{y} - m \bar{x}
+\end{equation}
+
+Plugging in $c$ from equation (3) into equation (1):
+$$m\sum\limits_{i = 1}^n {x_i^2 + \left( {\bar y - m\bar x} \right)\sum\limits_{i = 1}^n {{x_i}} }  = \sum\limits_{i = 1}^n {{x_i}{y_i}}  $$
+
+
+Factoring out $m$ and simplifying:
+$$m\left( {\sum\limits_{i = 1}^n {x_i^2 - \bar x\sum\limits_{i = 1}^n {{x_i}} } } \right) + \underbrace {\underbrace {\bar y}_{\frac{1}{n}\sum\limits_{i = 1}^n b{{y_i}} }\sum\limits_{i = 1}^n {{x_i}} }_{\sum\limits_{i = 1}^n {{y_i}} \frac{1}{n}\sum\limits_{i = 1}^n {{x_i}}  = \bar x\sum\limits_{i = 1}^n {{y_i}} } = \sum\limits_{i = 1}^n {{x_i}{y_i}} $$
+
+$$m\left( {\sum\limits_{i = 1}^n {x_i^2 - \bar x\sum\limits_{i = 1}^n {{x_i}} } } \right) = \sum\limits_{i = 1}^n {{x_i}{y_i}}  - \bar x\sum\limits_{i = 1}^n {{y_i}} $$
+
+Solving for $m$:
+\begin{equation}
+m = \frac{{\sum\limits_{i = 1}^n {\left( {{x_i} - \bar x} \right){y_i}} }}{{\left( {\sum\limits_{i = 1}^n {x_i^2 - \bar x\sum\limits_{i = 1}^n {{x_i}} } } \right)}}
+\end{equation}
+
+The denominator of equation (4) is equal to 
+$$\sum\limits_{i = 1}^n {\left( {{x_i} - {{\bar x}^2}} \right)} $$
+
+Proof:
+\begin{equation}
+\sum\limits_{i = 1}^n {{{\left( {{x_i} - \bar x} \right)}^2}}  = \sum\limits_{i = 1}^n {x_i^2}  - 2\bar x\sum\limits_{i = 1}^n {{x_i}}  + \sum\limits_{i = 1}^n {{{\bar x}^2}}
+\end{equation}
+The last term on the right in (5) is:
+\begin{equation}
+\sum\limits_{i = 1}^n {{{\bar x}^2}}  = n{{\bar x}^2} = \bar x \cdot n\bar x = \bar x \cdot n\left( {\frac{1}{n}\sum\limits_{i = 1}^n {{x_i}} } \right) = \bar x\sum\limits_{i = 1}^n {{x_i}} 
+\end{equation}
+So from (5) and (6)
+
+$$\sum\limits_{i = 1}^n {{{\left( {{x_i} - \bar x} \right)}^2}}  = \sum\limits_{i = 1}^n {x_i^2}  - 2\bar x\sum\limits_{i = 1}^n {{x_i}}  + \bar x\sum\limits_{i = 1}^n {{x_i}}$$
+\begin{equation}
+\sum\limits_{i = 1}^n {{{\left( {{x_i} - \bar x} \right)}^2}} = \sum\limits_{i = 1}^n {x_i^2}  - \bar x\sum\limits_{i = 1}^n {{x_i}} 
+\end{equation}
+
+QED
+\begin{equation}
+m = \frac{{\sum\limits_{i = 1}^n {\left( {{x_i} - \bar x} \right){y_i}} }}{{\sum\limits_{i = 1}^n {{{\left( {{x_i} - x} \right)}^2}} }}
+\end{equation}
+
+\subsection{Best Fit Line Through the Origin, (0,0)}
+For the best fit line through the origin, $c=0$. From equation (1), $\sum\limits_{i = 1}^n {{x_i}{y_i} = m\sum\limits_{i = 1}^n {x_i^2}  + c\sum\limits_{i = 1}^n {{x_i}} }$
+
+$$\sum\limits_{i = 1}^n {{x_i}{y_i} = m\sum\limits_{i = 1}^n {x_i^2} } $$
+
+\begin{equation}
+m = \frac{{\sum\limits_{i = 1}^n {{x_i}{y_i}} }}{{\sum\limits_{i = 1}^n {x_i^2} }}
+\end{equation}
+
 \end{document}
